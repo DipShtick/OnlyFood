@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgytu1bayvd3m"]
+[gd_scene load_steps=14 format=3 uid="uid://3pvwcl2s155n"]
 
-[ext_resource type="Script" path="res://player.cs" id="1_ldwsc"]
+[ext_resource type="Script" path="res://Scripts/player.cs" id="1_4jwd7"]
 [ext_resource type="Texture2D" uid="uid://bi7dojldkxext" path="res://fathi/fathi.png" id="1_nofo3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21250"]
@@ -95,7 +95,7 @@ animations = [{
 [node name="Player" type="Area2D"]
 position = Vector2(1020, 566)
 scale = Vector2(7, 7)
-script = ExtResource("1_ldwsc")
+script = ExtResource("1_4jwd7")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
