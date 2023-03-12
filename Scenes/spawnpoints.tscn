@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbljdsjcsnfaw"]
+
+[ext_resource type="Script" path="res://Spawnpoints.cs" id="1_ex837"]
+
+[node name="Spawnpoints" type="Node"]
+script = ExtResource("1_ex837")
+positions = Array[Marker2D]([null, null, null, null, null, null])
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(290, 8)
+
+[node name="Spawn2" type="Marker2D" parent="."]
+position = Vector2(966, 3)
+
+[node name="Spawn3" type="Marker2D" parent="."]
+position = Vector2(1625, -2)
+
+[node name="Spawn4" type="Marker2D" parent="."]
+position = Vector2(1923, 112)
+
+[node name="Spawn5" type="Marker2D" parent="."]
+position = Vector2(1921, 563)
+
+[node name="Spawn6" type="Marker2D" parent="."]
+position = Vector2(1922, 992)

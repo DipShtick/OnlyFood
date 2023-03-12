@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ducx6assrtqi8"]
+
+[ext_resource type="Script" path="res://Scripts/nutrients.cs" id="1_11suv"]
+[ext_resource type="Texture2D" uid="uid://dm2jlasd3hj02" path="res://Food/rotten flesh.png" id="2_qm5gt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2dmam"]
+radius = 104.0
+
+[node name="Rotten" type="Area2D"]
+position = Vector2(966.148, 567.337)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_11suv")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_2dmam")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qm5gt")

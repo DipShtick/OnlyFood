@@ -65,6 +65,12 @@ quit={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_render/layer_2="Healthy food"
+2d_render/layer_3="Bad food"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

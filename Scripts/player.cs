@@ -3,6 +3,12 @@ using System;
 
 public partial class player : Area2D
 {
+	/*
+		Runtime shenanigans
+
+		Background system stuff you know what i mean BOI?
+	*/
+	
 	Vector2 ScreenSize;
     public override void _EnterTree()
     {
@@ -10,7 +16,7 @@ public partial class player : Area2D
 
 		Animator = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
-	// Called when the node enters the scene tree for the first time.
+	
 	public override void _Ready()
 	{
 		
@@ -18,7 +24,6 @@ public partial class player : Area2D
 
 	int x, y;
 	double dolta;
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		dolta = delta;
@@ -27,6 +32,13 @@ public partial class player : Area2D
 		AnimationManager();
 	}
 
+	/*
+
+		Movement and animations.
+
+		Aka i stole the tutorial code and modified it LMFAO ECKS DEE
+
+	*/
 	Vector2 velocity;
 	public int Speed = 500;
 	void Movement()
@@ -100,5 +112,46 @@ public partial class player : Area2D
 		{
 			Animator.Animation = "rotate";
 		}
+	}
+
+	/* 
+
+		Gameplay mechanics and functions
+
+		Aka very big logic
+
+	*/
+
+	public int weight;
+	public const int startWeight = 50;
+	public void Eat(int amount)
+	{
+		weight += amount;
+
+		if(weight < startWeight)
+		{
+			Die();
+		}
+	}
+
+	public void OnAreaEntered(Area2D food)
+	{
+		if(food.IsInGroup("Good"))
+		{
+			Eat(10);
+		}
+		else if(food.IsInGroup("Bad"))
+		{
+			Eat(-25);
+		}
+		else
+		{
+			GD.Print("what fuq u are?");
+		}
+	}
+
+	void Die()
+	{
+		Hide();
 	}
 }
